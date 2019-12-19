@@ -1,0 +1,21 @@
+{
+  "name": "online-recruiter",
+  "version": "1.0.0",
+  "description": "Frontend: HTML 5, CSS 3, Bootstrap 4, Javascript, Jquery,Ajax // Backend: Nodejs ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Youssef Khaled",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.19.1",
+    "mysql-easier": "^2.1.0",
+    "nodemon": "^1.19.1"
+  }
+}
