@@ -17,6 +17,15 @@ const db = knex({
         database: "sql7316459",
         port: "3306"
     }
+
+    // We will change to this after deploying on Heroku
+    // connection: {
+    //     host: process.env.CLEARDB_DATABASE_URL,
+    //     user: "b2035d16df9aff",
+    //     password: "21a8ce89",
+    //     database: "heroku_03eef9978fdc76d",
+    //     port: "3306"
+    // }
 });
 
 const app = express();
