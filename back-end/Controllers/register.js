@@ -1,33 +1,31 @@
 const handleRegister = (req, res, db, bcrypt) => {
     const {
-        C_ID,
         USERNAME,
         EMAIL,
         PASSWORD,
         TELEPHONE
     } = req.body;
-    if (!C_ID ||
-        !USERNAME ||
+    if (!USERNAME ||
         !EMAIL ||
         !PASSWORD ||
         !TELEPHONE) {
         return res.status(400).json('incorrect form submission');
     }
-    const hash = bcrypt.hashSync(password);
-    db('CANDIDATE').insert({
-        C_ID: C_ID,
-        USERNAME: USERNAME,
-        EMAIL: EMAIL,
-        PASSWORD: hash,
-        TELEPHONE: TELEPHONE
+    //const hash = bcrypt.hashSync(PASSWORD);
+    db('candidate').insert({
+            USERNAME: USERNAME,
+            EMAIL: EMAIL,
+            PASSWORD: PASSWORD,
+            TELEPHONE: TELEPHONE
 
-    }).then(function (result) {
-        res.json({
-            success: true,
-            message: 'ok'
-        }); // respond back to request
-    }).catch(err => res.status(400).json('unable to register!!'))
-
+        })
+        .then(function (result) {
+            res.json({
+                success: true,
+                message: 'ok',
+                result: result
+            }); // respond back to request
+        }).catch(err => res.status(400).json(err))
 }
 module.exports = {
     handleRegister: handleRegister

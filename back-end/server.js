@@ -5,7 +5,7 @@ const cors = require("cors");
 const knex = require("knex");
 
 const register = require("./Controllers/register");
-const signin = require("./Controllers/signin");
+const signIn = require("./Controllers/signIn");
 const profile = require("./Controllers/profile");
 const exam = require("./Controllers/exam");
 
@@ -21,11 +21,9 @@ const db = knex({
 
     // Local
     connection: {
-        host: "http://127.0.0.1/",
         user: "root",
         password: "1234",
         database: "online_recruiter",
-        port: "3306"
     }
 
     // Heroku
@@ -47,9 +45,9 @@ app.get("/", (req, res) => {
     res.send("It's working");
 });
 
-app.post("/signin", (req, res) => {
-    res.send("sigin Working");
-    signin.handleSignin(req, res);
+app.post("/signIn", (req, res) => {
+    //res.send("sigIn Working");
+    signIn.handleSignIn(req, res, db);
 });
 
 
