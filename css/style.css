@@ -72,6 +72,16 @@ and open the template in the editor.
   color:RGB(46, 52, 64);
 }
 
+#candidateprofile h1{
+  font-family: 'Lobster', cursive; 
+  color:RGB(46, 52, 64);
+  margin-top: 20px;
+}
+#candidateprofile{
+  text-align: center;
+
+}
+
 #examsubmission h4{
   font-family: 'Lobster', cursive;
   font-size: 40px;
