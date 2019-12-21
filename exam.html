@@ -149,11 +149,10 @@
 
             </div>
         </div>
-
         <hr>
         <div class="row">
             <div class="col">
-                <form method="post">
+                <form action="/exam.js" method="post">
                     <h3> Who among the following had first invented the first electronic digital computer? </h3>
                     <div class="form-check examform">
                         <input type="radio" class="form-check-input" name="answer" value="a">
@@ -214,17 +213,18 @@
 
 
                     </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="examsubmission">
+                                <input type="submit" value="Submit Exam" class="btn btn-primary">
+                            </div>
+                        </div>
+                    </div>
 
                 </form>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <div id="examsubmission">
-                    <button type="submit" class="btn btn-primary">Submit Exam</button>
-                </div>
-            </div>
-        </div>
+
     </div>
     <!--end Exam content-->
 
