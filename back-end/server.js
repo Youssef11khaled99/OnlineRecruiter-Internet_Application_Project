@@ -1,68 +1,56 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const bcrypt = require("bcrypt-nodejs");
-const cors = require("cors");
-const knex = require("knex");
+var express = require("express");
+var session = require("express-session");
+var cookieParser = require('cookie-parser');
+var bodyParser = require("body-parser");
+var path = require("path");
+var LocalStrategy = require('passport-local');
+var passport = require('passport');
+const router = express.Router();
 
-const register = require("./Controllers/register");
-const signIn = require("./Controllers/signIn");
-const profile = require("./Controllers/profile");
-const exam = require("./Controllers/exam");
 
-const db = knex({
-    client: "mysql",
-    // connection: {
-    //     host: "sql7.freemysqlhosting.net",
-    //     user: "sql7316459",
-    //     password: "CXnZqH3VKJ",
-    //     database: "sql7316459",
-    //     port: "3306"
-    // }
+const db = require('./src/Models/db');
 
-    // Local
-    connection: {
-        user: "root",
-        password: "1234",
-        database: "online_recruiter",
-    }
-
-    // Heroku
-    // connection: {
-    //     host: process.env.CLEARDB_DATABASE_URL,
-    //     user: "b2035d16df9aff",
-    //     password: "21a8ce89",
-    //     database: "heroku_03eef9978fdc76d",
-    //     port: "3306"
-    // }
-});
+const examRouter = require("./src/Routes/examRouter");
+const hrRouter = require("./src/Routes/hrRouter");
+const candidateRouter = require("./src/Routes/candidateRouter");
 
 const app = express();
-
-app.use(bodyParser.json());
 app.use(cors());
 
+// Configure app to user bodyParser & the routes
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(
+    session({
+        secret: "secret",
+        resave: true,
+        saveUninitialized: true
+    })
+);
+
+app.use('/hr', hrRouter);
+app.use('/candidate', candidateRouter);
+app.use('/exam', examRouter);
+app.use('/examType', examTypeRouter);
+
+
+
+
+
 app.get("/", (req, res) => {
-    res.send("It's working");
+    res.sendFile(path.join(__dirname + "/Views/index.html"));
 });
 
-app.post("/signIn", (req, res) => {
-    //res.send("sigIn Working");
-    signIn.handleSignIn(req, res, db);
+app.get("/home", (req, res) => {
+    if (req.session.loggedin) {
+        res.send("Welcome back, " + req.session.username + "!");
+    } else {
+        res.send("Please login to view this page!");
+    }
+    res.end();
 });
 
-
-app.get("/exam", (req, res) => {
-    console.log("u")
-    res.send("exam Working");
-});
-
-app.post("/register", (req, res) => {
-    register.handleRegister(req, res, db, bcrypt);
-});
-
-app.get("/profile/:userId", (req, res) => {
-    profile.handleProfileGet(req, res, db);
-});
 app.listen(process.env.PORT || 5500, () => {
-    console.log(`app is running in port 5500`); // The same as db url we put them in the host
+    console.log(`app is running in port 5500`); 
 });

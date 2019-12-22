@@ -1,0 +1,89 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 6, 2019, 11:33:00 PM
+    Author     : nohaw
+*/
+
+#homepage{
+  background-image: url(../assets/21404.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 900px;
+  background-repeat: no-repeat;
+  background-color: RGB(248, 249, 250);
+}
+
+#starter{
+  margin-top: 50px;
+  font-family: 'Lobster', cursive;
+  font-size: 70px;
+}
+
+.pages{
+  background-color:RGB(46, 52, 64);
+}
+
+
+.pages h2{
+  margin: 20px;
+  font-family: 'Lobster', cursive;
+  color: white;
+}
+
+.card{
+  margin-bottom:20px;
+}
+
+#popupmsg{
+  display : none;
+}
+
+#modalLoginexam{
+  display : none;
+}
+
+#examinfo{
+  text-align: center;
+  background-color: wheat;
+  padding: 50px;
+ 
+}
+#exam{
+  background-color: wheat;
+  padding: 20px;
+}
+.examform{
+  padding-left: 50px;
+  padding-bottom: 20px;
+}
+
+#examsubmission{
+  text-align: center;
+  margin: 20px;
+}
+
+#examsubmission h1{
+  font-family: 'Lobster', cursive;
+  font-size: 70px;
+  color:RGB(46, 52, 64);
+}
+
+#candidateprofile h1{
+  font-family: 'Lobster', cursive; 
+  color:RGB(46, 52, 64);
+  margin-top: 20px;
+}
+#candidateprofile{
+  text-align: center;
+
+}
+
+#examsubmission h4{
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+  color:RGB(46, 52, 64);
+}

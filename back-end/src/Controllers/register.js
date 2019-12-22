@@ -1,4 +1,5 @@
 const handleRegister = (req, res, db, bcrypt) => {
+    
     const {
         USERNAME,
         EMAIL,

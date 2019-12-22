@@ -1,0 +1,86 @@
+#adminpage{
+    background-image: url(../assets/2608.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 900px;
+    background-repeat: no-repeat;
+    background-color: RGB(248, 249, 250);
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 50px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 25px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .adminpages{
+      background-color: RGB(255, 249, 219);
+  }
+
+  .table{
+      margin: 50px;
+  }
+  
+  #dashboard{
+    background-image: url(../assets/18771.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 900px;
+    background-repeat: no-repeat;
+  }
+  #dashboard h1{
+   font-family: 'Lobster', cursive;
+   font-size: 50px;
+  }
+
+  #dashboard .row{
+    margin-top: 20px;
+  }
+
+  h2{
+    font-family: 'Oswald', sans-serif;
+    margin-top: 20px;
+    font-size: 40px;
+  }
+
+  .table {
+    border: 2px solid black;
+  }
+.thead{
+    border: 2px solid black;
+  }
+  .table tr{
+    border: 2px solid black;
+  }
+  .table td{
+    border: 2px solid black;
+  }
+
+  #examanswer{
+    margin: 40px;
+    text-align: center;
+  }
